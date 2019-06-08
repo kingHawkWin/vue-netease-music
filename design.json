@@ -1,0 +1,45 @@
+{
+  "nav": [
+    "https://ruya.digital/",
+    "https://trio-tech.com/",
+    "https://www.beargrylls.com/",
+    "http://weareangstrom.com/en/installations-and-retail"
+  ],
+  "recommend": [
+    "http://vr.ultranoir.com/",
+    "https://www.serioverify.com/",
+    "http://www.sound-of-change.com/#/intro/",
+    "https://www.technics.com/global/50th-anniversary/",
+    ""
+  ],
+  "hot": "https://www.billboard.com/charts/billboard-200",
+  "artists": [
+    "https://amazoniafont.com/",
+    "https://www.pinterest.com/fromupnorth/web-design/?lp=true"
+  ],
+  "albums": [
+    "https://amazoniafont.com/",
+    "https://www.igegroup.com/"
+  ],
+  "song-style": "https://studiolovelock.com/",
+  "页面设计": {
+    "recommend": [
+      "静态艺人1",
+      "静态艺人4 - 静态艺人9",
+      "静态艺人2",
+      [
+        "--歌单大1---", "--歌单大2---", "排行1",
+        "歌单小4", "歌单小5", "歌单小6", "排行2",
+        "歌单小7", "歌单小8", "歌单小9", "排行3"
+      ],
+      "静态艺人3",
+      [
+        "艺人大1", "艺人小2", "艺人小3", "艺人小4",
+        "------", "艺人小5", "艺人小6", "艺人小7",
+        "专辑小1", "专辑小2", "专辑小3", "专辑大4",
+        "专辑小5", "专辑小6", "专辑小7", "------",
+        "专辑小8", "专辑小9", "专辑小10", "-----"
+      ]
+    ]
+  }
+}
