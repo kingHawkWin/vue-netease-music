@@ -692,7 +692,7 @@ export default {
       }
       return new Promise((resolve, reject) => {
         if (res && res.status === 200) {
-          if (+params.type === 1) {
+          if (+params.type === 1 && res.data.result.songs) {
             commit('updateSearch', {
               new: false,
               keywords: params.keywords,
@@ -717,7 +717,7 @@ export default {
               })
             })
           }
-          if (+params.type === 10) {
+          if (+params.type === 10 && res.data.result.albums) {
             commit('updateSearch', {
               new: false,
               keywords: params.keywords,
@@ -740,7 +740,7 @@ export default {
               })
             })
           }
-          if (+params.type === 100) {
+          if (+params.type === 100 && res.data.result.artists) {
             commit('updateSearch', {
               new: false,
               keywords: params.keywords,
@@ -755,7 +755,7 @@ export default {
               })
             })
           }
-          if (+params.type === 1000) {
+          if (+params.type === 1000 && res.data.result.playlists) {
             commit('updateSearch', {
               new: false,
               keywords: params.keywords,
@@ -775,7 +775,7 @@ export default {
               })
             })
           }
-          if (+params.type === 1009) {
+          if (+params.type === 1009 && res.data.result.djRadios) {
             commit('updateSearch', {
               new: false,
               keywords: params.keywords,

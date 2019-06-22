@@ -10,8 +10,8 @@ const setupDevServer = require('./build/setup-dev-server')
 const { createBundleRenderer } = require('vue-server-renderer')
 const isProd = process.env.NODE_ENV === 'production'
 const microCache = new LRU({
-  max: 100,
-  maxAge: 1000
+  max: Infinity,
+  maxAge: 1000 * 60 * 60 * 24
 })
 const isCacheable = ctx => {
   console.log(ctx.url)

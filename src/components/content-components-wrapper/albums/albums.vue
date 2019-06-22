@@ -57,7 +57,7 @@ export default {
     this.offsetIndex = 55
     window.addEventListener('scroll', () => {
       setTimeout(() => {
-        if (document.body.scrollHeight - window.innerHeight - window.pageYOffset < 150) {
+        if (document.body.scrollHeight - window.innerHeight - window.pageYOffset === 0) {
           this.offsetIndex += 10
           this.$store.dispatch('requestTopAlbums', {
             limit: 10,

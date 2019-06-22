@@ -7,7 +7,7 @@
     )
     span(
       :class='["cursor"]'
-    ) ▌
+    ) |
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 <style lang="stylus" scoped>
   .introduction
     width 100%
-    height 2rem
+    height .5rem
     background-color transparent
     text-align center
   .introduction-content
@@ -41,7 +41,7 @@ export default {
                 2px 2px 0 #333,
                 -2px -2px 0 #333
   .introduction-content
-    line-height 2rem
+    line-height .5rem
     font-size .26rem
     font-weight bold
     text-shadow 0 1em .1em rgba(255, 255, 255, 0), 0 -1em .1em rgba(255, 255, 255, 0)
@@ -67,5 +67,5 @@ export default {
     text-shadow 0 0 .1em #33333c, 0 0 .2em #fff
     transition all .2s ease-in-out
   .cursor
-    font-size .26rem
+    font-size 30px
 </style>

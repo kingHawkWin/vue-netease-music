@@ -8,7 +8,7 @@
       div(
         :class='["playlists-item"]'
         v-for='(playlist, index) of getSearch.result'
-        :key='playlist.id'
+        :key='index'
       )
         a(
           :class='["playlists-item-cover"]'
@@ -36,8 +36,8 @@
         ) {{ playlist.name }}
         p(
           :class='["playlists-item-creator-nickname"]'
-          @click='jumpToCreator(playlist.creatorId)'
-        ) by {{ playlist.creatorNickname}}
+          @click='jumpToCreator(playlist.creator.id)'
+        ) by {{ playlist.creator.name }}
 </template>
 
 <script>

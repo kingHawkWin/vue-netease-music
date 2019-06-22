@@ -6,7 +6,7 @@
       li(
         :class='["song-list"]'
         v-for='(song, index) of list'
-        :key='song.id'
+        :key='index'
       )
         span(
           :class='["serial-number"]'

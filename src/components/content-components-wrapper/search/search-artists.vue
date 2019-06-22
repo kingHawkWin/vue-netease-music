@@ -8,7 +8,7 @@
       div(
         :class='["artists-item"]'
         v-for='(artist, index) of getSearch.result'
-        :key='artist.id'
+        :key='index'
       )
         a(
           :class='["artists-item-cover"]'

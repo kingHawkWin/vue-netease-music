@@ -24,10 +24,20 @@ export default {
     Content,
     Bar
   },
+  data () {
+    return {
+      imgLen: 0
+    }
+  },
   computed: {
     ...mapGetters([
       'getCurrentSong'
     ])
+  },
+  watch: {
+    imgLen (newValue, oldValue) {
+      console.log(newValue, oldValue)
+    }
   },
   created () {
     this.$store.dispatch('checkLoginStatus')

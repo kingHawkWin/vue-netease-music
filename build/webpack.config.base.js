@@ -26,7 +26,8 @@ module.exports = {
       'store': utils.resolveBasePath('./src/store'),
       'router': utils.resolveBasePath('./src/router'),
       'api': utils.resolveBasePath('./src/api'),
-      'lib': utils.resolveBasePath('./src/lib')
+      'lib': utils.resolveBasePath('./src/lib'),
+      'views': utils.resolveBasePath('./src/views')
     }
   },
   module: {

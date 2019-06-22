@@ -8,7 +8,7 @@
         div(
           :class='["radios-item"]'
           v-for='(radio, index) of getSearch.result'
-          :key='radio.id'
+          :key='index'
         )
           a(
             :class='["radios-item-cover"]'

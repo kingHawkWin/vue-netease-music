@@ -3,38 +3,109 @@
     :class='["carousel"]'
   )
     div(
-      :class='["carousel-left"]'
-    )
-    section(
-      :class='["carousel-content"]'
-    )
-      a(:class='["carousel-content-item"]')
-      a(:class='["carousel-content-item"]')
-      a(:class='["carousel-content-item"]')
-      a(:class='["carousel-content-item"]')
-      a(:class='["carousel-content-item"]')
-      div(
-        :class='["carousel-control-wrapper"]'
-      )
-        span(:class='["carousel-control"]')
-        span(:class='["carousel-control"]')
-        span(:class='["carousel-control"]')
-        span(:class='["carousel-control"]')
-        span(:class='["carousel-control"]')
+      :class='["carousel-previous"]'
+      @click='switchPrevious'
+    ) {{ '<' }}
     div(
-      :class='["carousel-right"]'
+      :class='["carousel-next"]'
+      @click='switchNext'
+    ) {{ '>' }}
+    div(
+      :class='["carousel-content"]'
+      v-for='(item, index) of 3'
+      :key='index'
     )
+      div(
+        :class='["carousel-content-album"]'
+      )
+        div(
+          :class='["carousel-content-album-split"]'
+          v-for='(item, albumSplitIndex) of 5'
+          :key='albumSplitIndex'
+          @click='jumpToAlbum(index)'
+        )
+      div(
+        :class='["carousel-content-artist"]'
+      )
+        div(
+          :class='["carousel-content-artist-split"]'
+          v-for='(item, artistSplitIndex) of 5'
+          :key='artistSplitIndex'
+          @click='jumpToArtist(index)'
+        )
 </template>
 
 <script>
-import { carousel } from './carousel.js'
 
 export default {
-  components: {
-
+  data () {
+    return {
+      album: [
+        '37000751',
+        '2745274',
+        '34874877'
+      ],
+      artist: [
+        '228489',
+        '32392',
+        '939104'
+      ]
+    }
   },
   mounted () {
-    carousel()
+    const content = document.getElementsByClassName('carousel-content');
+    [...content].map((v, k, a) => {
+      v.style.opacity = 0
+      a[0].style.opacity = 1
+    })
+  },
+  methods: {
+    switchPrevious () {
+      const content = [...document.getElementsByClassName('carousel-content')]
+      let currentIndex = 0
+      if (+content[0].style.opacity === 1) {
+        content[0].style.opacity = 0
+        content[0].style.zIndex = -1
+        content[content.length - 1].style.opacity = 1
+        content[content.length - 1].style.zIndex = 1
+        return ''
+      }
+      content.filter((v, k) => {
+        if (+v.style.opacity === 1) {
+          currentIndex = k
+        }
+      })
+      content[currentIndex].style.opacity = 0
+      content[currentIndex].style.zIndex = -1
+      content[currentIndex - 1].style.opacity = 1
+      content[currentIndex - 1].style.zIndex = 1
+    },
+    switchNext () {
+      const content = [...document.getElementsByClassName('carousel-content')]
+      let currentIndex = 0
+      if (+content[content.length - 1].style.opacity === 1) {
+        content[content.length - 1].style.opacity = 0
+        content[content.length - 1].style.zIndex = -1
+        content[0].style.opacity = 1
+        content[0].style.zIndex = 1
+        return ''
+      }
+      content.filter((v, k) => {
+        if (+v.style.opacity === 1) {
+          currentIndex = k
+        }
+      })
+      content[currentIndex].style.opacity = 0
+      content[currentIndex].style.zIndex = -1
+      content[currentIndex + 1].style.opacity = 1
+      content[currentIndex + 1].style.zIndex = 1
+    },
+    jumpToAlbum (index) {
+      this.$router.push({ name: 'album', params: { albumId: this.album[index] } })
+    },
+    jumpToArtist (index) {
+      this.$router.push({ name: 'artist', params: { artistId: this.artist[index] } })
+    }
   }
 }
 </script>
@@ -42,76 +113,72 @@ export default {
 <style lang="stylus" scoped>
   .carousel
     width 100%
-    height 4rem
+    height 40vw
+    max-height 400px
     position relative
-  .carousel-left
-    width 10%
-    height 100%
+  .carousel-previous
+  .carousel-next
+    width 40px
+    height 40px
+    font-size 40px
+    font-weight bold
+    color #eee
+    line-height 40px
+    text-align center
+    background-color transparent
+    text-shadow 1px 0 0 #eee,
+                0 1px 0 #eee
     position absolute
-    background-color #fff
-    transition all .3s ease-in-out
-    @media screen and (max-width: 1024px)
-      display none
+    top 50%
+    z-index 2
+    transform translate(0, -50%)
+    cursor pointer
+  .carousel-previous
+    left 0
+  .carousel-next
+    right 0
   .carousel-content
-    width 80%
-    height 100%
-    position absolute
-    left 10%
-    @media screen and (max-width: 1024px)
-      width 100%
-      left 0
-  .carousel-content-item
-    display block
     width 100%
     height 100%
     position absolute
-    top 0
-    background-size cover
-    background-position center center
-    transition all .2s ease-in-out
-    &:nth-of-type(1)
-      background-image url('../../../assets/images/dead-cells.jpg')
-      @media screen and (max-width: 1024px)
-        background-image url('../../../assets/images/dead-cells-small.jpg')
-    &:nth-of-type(2)
-      background-image url('../../../assets/images/enter-the-gungeon.jpg')
-      @media screen and (max-width: 1024px)
-        background-image url('../../../assets/images/enter-the-gungeon-small.jpg')
+    transition all 1s ease-in-out
     &:nth-of-type(3)
-      background-image url('../../../assets/images/hotline-miami.jpg')
-      @media screen and (max-width: 1024px)
-        background-image url('../../../assets/images/hotline-miami-small.jpg')
-    &:nth-of-type(4)
-      background-image url('../../../assets/images/undertale.jpg')
-      @media screen and (max-width: 1024px)
-        background-image url('../../../assets/images/undertale-small.jpg')
-    &:nth-of-type(5)
-      background-image url('../../../assets/images/dunderpatrullen.jpg')
-      @media screen and (max-width: 1024px)
-        background-image url('../../../assets/images/dunderpatrullen-small.jpg')
-  .carousel-right
-    width 10%
+      z-index 1
+  .carousel-content-album
+  .carousel-content-artist
+    width 50%
     height 100%
     position absolute
-    right 0
-    background-color #fff
-    transition all .3s ease-in-out
-    @media screen and (max-width: 1024px)
-      display none
-  .carousel-control-wrapper
-    position absolute
-    left 50%
-    bottom .2rem
-    z-index 1
-    transform translate(-50%, 0)
-  .carousel-control
-    display inline-block
-    margin 0 .05rem
-    padding 2px
-    width .15rem
-    height .15rem
-    border 3px solid #fff
-    border-radius 50%
-    background-clip content-box
     cursor pointer
+  .carousel-content-album
+    left 0
+  .carousel-content-artist
+    right 0
+  .carousel-content-album-split
+  .carousel-content-artist-split
+    width 100%
+    height 100%
+    box-shadow 1px 0 0 0 #333
+    background-size cover
+    background-position center
+    background-repeat no-repeat
+    transform-origin center center
+    transform rotate(0)
+    position absolute
+    top 0
+    left 0
+    transition all 1s ease-in-out
+  .carousel-content
+    &:nth-of-type(3) .carousel-content-album-split
+      background-image url("../../../assets/images/shirobon-album.jpg")
+    &:nth-of-type(3) .carousel-content-artist-split
+      background-image url("../../../assets/images/shirobon-artist.jpg")
+    &:nth-of-type(4) .carousel-content-album-split
+      background-image url("../../../assets/images/dubmood-album.jpg")
+    &:nth-of-type(4) .carousel-content-artist-split
+      background-image url("../../../assets/images/dubmood-artist.gif")
+    &:nth-of-type(5) .carousel-content-album-split
+      background-image url("../../../assets/images/DDRKirby-album.jpg")
+    &:nth-of-type(5) .carousel-content-artist-split
+      background-image url("../../../assets/images/DDRKirby-artist.jpg")
 </style>

@@ -85,5 +85,10 @@ export default [
     component: () => import('components/content-components-wrapper/user/user.vue'),
     name: 'user',
     prop: true
+  },
+  {
+    path: '*',
+    component: () => import('views/404.vue'),
+    name: '404'
   }
 ]

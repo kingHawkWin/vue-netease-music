@@ -3,18 +3,15 @@
     :class='["nav", getNavIsActive ? "nav-active" : ""]'
   )
     NavItems
-    Author
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import NavItems from 'components/nav-components-wrapper/nav-items/nav-items.vue'
-import Author from 'components/nav-components-wrapper/author/author.vue'
 
 export default {
   components: {
-    NavItems,
-    Author
+    NavItems
   },
   computed: {
     ...mapGetters([

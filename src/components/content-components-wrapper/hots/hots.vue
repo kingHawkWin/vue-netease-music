@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(
+  section(
     :class='["hots"]'
   )
     nav(
@@ -143,6 +143,7 @@ export default {
     height 400px
     position fixed
     top -400px
+    left 0
     z-index 1
     overflow hidden
     transition all 1s ease-in-out
