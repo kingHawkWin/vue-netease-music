@@ -212,17 +212,17 @@ export default {
   .current-album
     bottom 10px
   .current-add
-  .current-collect
-    width 30px
-    height 30px
-    background-size 30px 30px
-    position absolute
-    bottom 15px
-    cursor pointer
-  .current-add
     right 60px
-    background-image url('../../assets/images/add.png')
+    background url('../../assets/images/sprite.png') -41px -71px
   .current-collect
     right 20px
-    background-image url('../../assets/images/collect.png')
+    background url('../../assets/images/sprite.png') -6px -103px
+  .current-add
+  .current-collect
+    width 20px
+    height 20px
+    background-size 204px 162px
+    position absolute
+    bottom 25px
+    cursor pointer
 </style>

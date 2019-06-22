@@ -227,7 +227,8 @@ export default {
   .creator-collectplaylists-item-playcount-icon
     width 10px
     height 10px
-    background-image url('../../../assets/images/play-count.png')
+    background url('../../../assets/images/sprite.png') -4px -117px
+    background-size 102px 81px
     position absolute
     left 5px
     bottom 4px
@@ -245,7 +246,8 @@ export default {
   .creator-collectplaylists-item-playall
     width 25px
     height 25px
-    background-image url('../../../assets/images/play.png')
+    background url('../../../assets/images/sprite.png') -8px -169px
+    background-size 255px 203px
     position absolute
     right 0
     bottom 0

@@ -227,7 +227,8 @@ export default {
       height 25px
       right 0
       bottom 0
-      background-image url('../../../assets/images/play.png')
+      background url('../../../assets/images/sprite.png') -8px -169px
+      background-size 255px 203px
       cursor pointer
     & span:nth-child(2)
       font-size .12rem
@@ -238,7 +239,8 @@ export default {
       height 10px
       left 5px
       bottom 4px
-      background-image url('../../../assets/images/play-count.png')
+      background url('../../../assets/images/sprite.png') -4px -117px
+      background-size 102px 81px
   .personal-songs-playlists-intro
     margin-top 5px
     & h4

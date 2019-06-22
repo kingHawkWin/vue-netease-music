@@ -121,18 +121,20 @@ export default {
   .collectall
     background linear-gradient(90deg, #454a73, #4e4376)
   .playall div
-    background-image url('../../assets/images/play.png')
+    background url('../../assets/images/sprite.png') -8px -297px
+    background-size 204px 162px
   .add div
-    background-image url('../../assets/images/add.png')
+    background url('../../assets/images/sprite.png') -35px -186px
+    background-size 174px 131px
   .collectall div
-    background-image url('../../assets/images/collect.png')
+    background url('../../assets/images/sprite.png') -97px -186px
+    background-size 174px 131px
   .playall>div
   .add>div
   .collectall>div
     display inline-block
     width 20px
     height 20px
-    background-size 20px 20px
   #playall
   #add
   #collectall

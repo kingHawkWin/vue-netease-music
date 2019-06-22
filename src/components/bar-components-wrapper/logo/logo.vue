@@ -45,9 +45,8 @@ export default {
     top 15px
   .logo-creator-github
     width 20px
-    background-image url('../../../assets/images/github.png')
-    background-size cover
-    background-position center center
+    background url('../../../assets/images/sprite.png') 59px -5px
+    background-size 204px 162px
   .logo-creator-author
     font-size 18px
     font-weight bold

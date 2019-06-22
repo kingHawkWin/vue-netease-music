@@ -146,8 +146,8 @@ export default {
     width 40px
     height 40px
     border-radius 50%
-    background-image url('../../../assets/images/play.png')
-    background-size contain
+    background url('../../../assets/images/sprite.png') -10px -272px
+    background-size 408px 325px
     background-repeat no-repeat
     box-shadow 0 0 10px rgba(0, 0, 0, .35)
     position absolute

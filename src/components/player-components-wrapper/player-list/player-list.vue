@@ -198,9 +198,11 @@ export default {
     background-repeat no-repeat
     cursor pointer
   .player-list-control-collect
-    background-image url('../../../assets/images/audio-collect.png')
+    background url('../../../assets/images/sprite.png') -107px -195px
+    background-size 204px 162px
   .player-list-control-del
-    background-image url('../../../assets/images/delete.png')
+    background url('../../../assets/images/sprite.png') -98px -261px
+    background-size 204px 162px
   .player-list-control-collect-active
   .player-list-control-del-active
     position relative
@@ -209,9 +211,6 @@ export default {
       content ''
       width 30px
       height 30px
-      background-size 20px 20px
-      background-position 5px 5px
-      background-repeat no-repeat
       position absolute
       top 0
       left 0
@@ -219,21 +218,25 @@ export default {
     animation collect-active 2s ease-in-out .7s infinite
     &::before
       z-index -1
-      background-image url('../../../assets/images/audio-collect-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -68px -227px
+      background-size 204px 162px
       animation control-active-shadow-1 2s ease-in-out .7s infinite
     &::after
       z-index -2
-      background-image url('../../../assets/images/audio-collect-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -108px -1px
+      background-size 204px 162px
       animation control-active-shadow-2 2s ease-in-out .7s infinite
   .player-list-control-del-active
     animation del-active 2s ease-in-out .8s infinite
     &::before
       z-index -1
-      background-image url('../../../assets/images/delete-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -33px -261px
+      background-size 204px 162px
       animation control-active-shadow-1 2s ease-in-out .8s infinite
     &::after
       z-index -2
-      background-image url('../../../assets/images/delete-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -66px -261px
+      background-size 204px 162px
       animation control-active-shadow-2 2s ease-in-out .8s infinite
   @keyframes collect-active
     0%

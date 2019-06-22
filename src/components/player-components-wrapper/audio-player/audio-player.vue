@@ -756,8 +756,6 @@ export default {
       content ''
       width 100%
       height 100%
-      background-size 20px 20px
-      background-position 5px
       background-repeat no-repeat
       position absolute
       top 0
@@ -767,21 +765,27 @@ export default {
     &::after
       animation volume-icon-shadow-2 2s ease-in-out 0s infinite
   .audio-volume-off-icon
-    background-image url('../../../assets/images/volume-off.png')
+    background url('../../../assets/images/sprite.png') -74px -195px
+    background-size 204px 162px
     &::before
       z-index -1
-      background-image url('../../../assets/images/volume-off-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -3px -1px
+      background-size 204px 162px
     &::after
       z-index -2
-      background-image url('../../../assets/images/volume-off-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -39px -1px
+      background-size 204px 162px
   .audio-volume-on-icon
-    background-image url('../../../assets/images/volume-on.png')
+    background url('../../../assets/images/sprite.png') -39px -195px
+    background-size 204px 162px
     &::before
       z-index -1
-      background-image url('../../../assets/images/volume-on-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -3px -195px
+      background-size 204px 162px
     &::after
       z-index -2
-      background-image url('../../../assets/images/volume-on-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -74px -1px
+      background-size 204px 162px
   @keyframes volume-icon
     0%
       top 0
@@ -878,7 +882,7 @@ export default {
       top 0px
       left 0px
   .audio-mode
-    width 40px
+    width 30px
     top 0
   .audio-mode-list-loop
   .audio-mode-song-loop
@@ -886,9 +890,6 @@ export default {
     width 100%
     height 100%
     font-weight bold
-    background-size 20px 20px
-    background-position 10px
-    background-repeat no-repeat
     position absolute
     top 0
     left 0
@@ -898,9 +899,6 @@ export default {
       content ''
       width 100%
       height 100%
-      background-size 20px 20px
-      background-position 10px
-      background-repeat no-repeat
       position absolute
       top 0
       left 0
@@ -939,35 +937,42 @@ export default {
       top 0
       left 0
   .audio-mode-list-loop
-    background-image url('../../../assets/images/list-loop.png')
+    background url('../../../assets/images/sprite.png') -141px -260px
+    background-size 204px 162px
     &::before
       z-index -1
-      background-image url('../../../assets/images/list-loop-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -141px -194px
+      background-size 204px 162px
     &::after
       z-index -2
-      background-image url('../../../assets/images/list-loop-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -141px -226px
+      background-size 204px 162px
   .audio-mode-song-loop
-    background-image url('../../../assets/images/song-loop.png')
+    background url('../../../assets/images/sprite.png') -174px -196px
+    background-size 204px 162px
     &::before
       z-index -1
-      background-image url('../../../assets/images/song-loop-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -133px -293px
+      background-size 204px 162px
     &::after
       z-index -2
-      background-image url('../../../assets/images/song-loop-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -174px -1px
+      background-size 204px 162px
   .audio-mode-random-loop
-    background-image url('../../../assets/images/random-loop.png')
+    background url('../../../assets/images/sprite.png') -99px -293px
+    background-size 204px 162px
     &::before
       z-index -1
-      background-image url('../../../assets/images/random-loop-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -34px -293px
+      background-size 204px 162px
     &::after
       z-index -2
-      background-image url('../../../assets/images/random-loop-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -67px -293px
+      background-size 204px 162px
   .audio-collect
-    width 40px
-    background-image url('../../../assets/images/audio-collect.png')
-    background-size 20px 20px
-    background-position 10px
-    background-repeat no-repeat
+    width 30px
+    background url('../../../assets/images/sprite.png') -107px -195px
+    background-size 204px 162px
     top 0px
     right 40px
     animation collect 2s ease-in-out 0s infinite
@@ -976,19 +981,18 @@ export default {
       content ''
       width 100%
       height 100%
-      background-size 20px 20px
-      background-position 10px
-      background-repeat no-repeat
       position absolute
       top 0
       left 0
     &::before
       z-index -1
-      background-image url('../../../assets/images/audio-collect-shadow-1.png')
+      background url('../../../assets/images/sprite.png') -68px -227px
+      background-size 204px 162px
       animation collect-shadow-1 2s ease-in-out 0s infinite
     &::after
       z-index -2
-      background-image url('../../../assets/images/audio-collect-shadow-2.png')
+      background url('../../../assets/images/sprite.png') -107px -164px
+      background-size 204px 162px
       animation collect-shadow-2 2s ease-in-out 0s infinite
   @keyframes collect
     0%
