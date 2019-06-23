@@ -165,9 +165,9 @@
     ├─ [3.1K]  package.json
     └─ [6.2K]  README.md
 
-# Fetures and Screenshots
+# Features and Screenshots
 
-## fetures
+## features
 
 - 响应式界面
 - 测试浏览器：pc chrome/ios12 chrome
