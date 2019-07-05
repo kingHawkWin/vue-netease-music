@@ -1,15 +1,15 @@
 const fs = require('fs')
 const path = require('path')
-const LRU = require('lru-cache')
-const chalk = require('chalk')
+const LRU = require('lru-cache') //  不缓存最近最少使用的项
+const chalk = require('chalk') //  着色器
 const Koa = require('koa')
-const Router = require('koa-router')
+const Router = require('koa-router') //  koa路由 middleware
 const send = require('koa-send')
 const favicon = require('koa-favicon')
 const setupDevServer = require('./build/setup-dev-server')
 const { createBundleRenderer } = require('vue-server-renderer')
 const isProd = process.env.NODE_ENV === 'production'
-const microCache = new LRU({
+const microCache = new LRU({ //  不缓存最近最少使用的项
   max: Infinity,
   maxAge: 1000 * 60 * 60 * 24
 })
@@ -24,7 +24,7 @@ if (isProd) {
   const serverBundle = require('./dist/vue-ssr-server-bundle.json')
   const clientManifest = require('./dist/vue-ssr-client-manifest.json')
   renderer = createBundleRenderer(serverBundle, {
-    runInNewContext: false,
+    runInNewContext: false,  //  关闭以提升性能
     template: fs.readFileSync(templatePath, 'utf-8'),
     clientManifest
   })

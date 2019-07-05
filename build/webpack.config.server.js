@@ -7,11 +7,11 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 module.exports = webpackMerge(webpackConfigBase, {
   mode: 'production',
-  target: 'node',
+  target: 'node', //  部署目标
   devtool: 'source-map',
   entry: path.join(__dirname, '../src/entry-server.js'),
   output: {
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'commonjs2', //  模块用于commonjs环境
     filename: 'server-bundle.js',
     path: path.join(__dirname, '../dist')
   },
@@ -33,7 +33,7 @@ module.exports = webpackMerge(webpackConfigBase, {
       }
     ]
   },
-  externals: Object.keys(require('../package.json').dependencies),
+  externals: Object.keys(require('../package.json').dependencies), //  防止将prod依赖包打包到bundle，运行时外部获取
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
